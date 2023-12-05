@@ -1,0 +1,101 @@
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url("/assets/fonts/Roboto-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("/assets/fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: hsl(234, 29%, 20%);
+  font-family: Roboto-Regular, sans-serif;
+}
+
+div.container {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(234, 29%, 20%);
+  margin: 20rem auto;
+  border-radius: 35px;
+  max-width: 1000px;
+}
+
+div.first {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px 15px; /* Adjust padding on the sides */
+  text-align: center;
+  flex-grow: 1;
+}
+
+div.row {
+  margin: 0 -15px;
+}
+
+div img {
+  padding: 25px;
+  padding-left: 40px;
+}
+
+input,
+button {
+  padding: 12px;
+  border-radius: 10px;
+}
+
+input {
+  border: solid 0.5px hsl(231, 7%, 60%);
+  color: hsl(231, 7%, 60%);
+}
+
+button {
+  background-color: hsl(234, 29%, 20%);
+  color: hsl(0, 0%, 100%);
+  border: none;
+  margin-bottom: 20px;
+}
+
+div.input-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 350px;
+}
+
+label {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+p {
+  font-size: 16px;
+}
+
+h1,
+label {
+  font-family: Roboto-bold, sans-serif;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 2.6rem 0;
+  font-size: 50px;
+}
+
+/* removes default padding from bootstrap clmns */
+
+.remove-pad {
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
