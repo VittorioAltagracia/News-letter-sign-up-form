@@ -23,45 +23,46 @@
     <title>Newsletter sign-up form with success message</title>
   </head>
   <body>
-    <div class="container main-container">
-      <div class="row g-0">
-        <div class="col order-sm-first col-md-5 remove-pad">
-          <div class="first">
-            <h1>Stay updated!</h1>
-            <p>Join 60,000+ product managers receiving monthly updates on:</p>
-            <ul class="u-list">
-              <li class="list-items">
-                Product discovery and building what matters
-              </li>
-              <li class="list-items">
-                Measuring to ensure updates are a success
-              </li>
-              <li class="list-items">And much more!</li>
-            </ul>
-            <div class="input-btn">
+    <div class="main-container">
+        <div class="first  remove-pad">
+          <h1>Stay updated!</h1>
+          <p class="par1">Join 60,000+ product managers receiving monthly updates on:</p>
+          <ul class="u-list">
+            <li class="list-items">
+              Product discovery and building what matters
+            </li>
+            <li class="list-items">
+              Measuring to ensure updates are a success
+            </li>
+            <li class="list-items">And much more!</li>
+          </ul>
+          <div class="input-btn">
+            <div class="labels">
               <label for="email"> Email address</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="email@company.com"
-                class="mb-4"
-              />
-
-              <button
-                type="button"
-                data-bs-toggle="modal"
-                data-bs-target="#confirmationModal"
-              >
-                Subscribe to monthly newsletter
-              </button>
+              <label class="hide" for="email" id="errorLabel" style="color: hsl(4, 100%, 67%);">Valid email required</label>
             </div>
+              <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="email@company.com"
+              required
+              
+            />
+
+            <button
+              type="button"
+              id="subs"
+              
+            >
+              Subscribe to monthly newsletter
+            </button>
           </div>
         </div>
-        <div class="col order-first col-md-5 remove-pad">
+        <div class="second remove-pad">
           <img
-            src="/assets//images/illustration-sign-up-desktop.svg"
-            alt="sign-up-image"
+          class="subs-img"
+            
           />
         </div>
       </div>
@@ -71,19 +72,24 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
+            <div class="custom-checkbox"></div>
+
             <h1 class="modal-title">Thanks for subscribing!</h1>
           </div>
           <div class="modal-body">
             <p>
               Thanks for subscribing! A confirmation email has been sent to
-              ash@loremcompany.com. Please open it and click the button inside
-              to confirm your subscription.
+              <span class="customer-email">
+                .
+              </span> Please open it and click the button inside
+                to confirm your subscription.
             </p>
             <button
               type="button"
-              class="input-btn"
               data-bs-dismiss="modal"
+              class="dismiss-button"
               aria-label="Close"
+              style="width: 450px;"
             >
               Dismiss message
             </button>

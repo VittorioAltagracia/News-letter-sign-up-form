@@ -23,9 +23,9 @@ body {
   color: hsl(234, 29%, 20%);
   margin: 20rem auto;
   border-radius: 35px;
-  padding: 20px;
+  padding: 25px;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
   max-width: fit-content;
 }
@@ -33,13 +33,17 @@ body {
 div.first {
   display: flex;
   flex-direction: column;
-  padding: 50px 20px;
+  padding: 30px 20px;
+  padding-left: 25px;
   text-align: left;
-  flex-grow: 1;
 }
 
 div img {
-  margin-left: 3rem;
+  margin-left: 0.5rem;
+}
+
+.subs-img {
+  content: url("/assets/images/illustration-sign-up-desktop.svg");
 }
 
 input,
@@ -51,6 +55,11 @@ button {
 input {
   border: solid 0.5px hsl(231, 7%, 60%);
   color: hsl(231, 7%, 60%);
+  margin-bottom: 1.5rem;
+}
+
+input:active {
+  cursor: pointer;
 }
 
 button {
@@ -58,13 +67,22 @@ button {
   color: hsl(0, 0%, 100%);
   border: none;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 
+button:active {
+  background: linear-gradient(to right, hsl(4, 100%, 67%), #ff6600);
+  box-shadow: 1px 20px 27px -1px rgba(255, 98, 87, 0.44);
+  -webkit-box-shadow: 1px 20px 27px -1px rgba(255, 98, 87, 0.44);
+  -moz-box-shadow: 1px 20px 27px -1px rgba(255, 98, 87, 0.44);
+}
+
+.dismiss-button {
+  margin-top: 2rem;
+}
 .input-btn {
   display: flex;
   flex-direction: column;
-  width: 350px;
   margin-top: 1rem;
 }
 
@@ -76,16 +94,19 @@ label {
 p {
   font-size: 16px;
 }
+p.par1 {
+  max-width: 390px;
+}
 
 h1,
-label {
+label,
+.customer-email {
   font-family: Roboto-bold, sans-serif;
   font-weight: 700;
 }
 
 h1 {
-  margin: 2.6rem 0;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   font-size: 50px;
 }
 
@@ -112,34 +133,117 @@ li::before {
   margin-right: 11px;
 }
 
+div.modal-content {
+  margin: 20rem auto;
+}
+
+h1.modal-title {
+  font-size: 46px;
+}
+
+div.modal-content {
+  padding-top: 5rem;
+  padding-bottom: 0.5rem;
+}
+.custom-checkbox {
+  margin-top: 1rem;
+  position: absolute;
+  top: 20px;
+  left: 47px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: hsl(4, 100%, 67%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media screen and (max-width: 768px) {
   div.first {
-    text-align: center;
     justify-content: center;
   }
-  div.input-btn {
-    margin-left: 4rem;
-    margin-right: 3rem;
+
+  .input-btn {
+    width: 325px;
+    align-self: center;
+  }
+
+  li::before {
+    font-size: smaller;
   }
   label {
     text-align: left;
+  }
+  ul {
+    font-size: 14px;
+    text-align: left;
+  }
+  h1 {
+    align-self: start;
+    margin: 2rem 0rem;
+    font-size: 46px;
+  }
+  p.par1 {
+    font-size: 14px;
+    max-width: 310px;
+  }
+  .subs-img {
+    content: url("/assets/images/illustration-sign-up-mobile.svg");
+    margin: 0;
+  }
+  .main-container {
+    border-radius: 0;
+    flex-direction: column-reverse;
+    padding: 0;
+  }
+  .dismiss-button {
+    margin-top: 20rem;
+    max-width: 340px;
+  }
+  div.modal-content {
+    padding: 20px;
+    padding-bottom: 5px;
+    font-size: 13px;
+    max-width: 420px;
+    margin: 10rem auto;
+  }
+  div.modal-body {
+    padding: 0;
+  }
+  .modal-title {
+    font-size: 32px;
+    margin-top: 10rem;
+  }
+  .modal-header {
+    padding-left: 0;
+  }
+  div.modal-body p {
+    font-size: 14px;
+  }
+  .custom-checkbox {
+    top: 100px;
+    left: 19px;
   }
 }
 
 @media screen and (max-width: 576px) {
   h1 {
-    margin-top: 1rem;
     font-size: 40px;
   }
-  .main-container {
-    max-width: 450px;
-  }
+
   div img {
     margin: 0;
   }
 
   div.first {
-    padding: 30px 20px;
+    padding: 0;
+    max-width: 375px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .input-btn {
+    max-width: fit-content;
   }
 }
 
@@ -156,14 +260,23 @@ li::before {
   padding: 2rem;
 }
 
-/* .modal-content::before {
+.text-danger {
+  background-color: hsl(4, 100%, 67%, 0.2);
+  border: 0.5px solid hsl(4, 100%, 67%);
+  color: hsl(4, 100%, 67%);
+}
+
+.hide {
+  display: none;
+}
+
+.labels {
+  display: flex;
+  justify-content: space-between;
+}
+
+.custom-checkbox::before {
   content: "✔";
+  font-size: x-large;
   color: white;
-  background-color: hsl(4, 100%, 67%);
-  border-radius: 50%;
-  font-size: 30px;
-  padding: 14px;
-  margin-bottom: 2rem;
-  text-align: left;
-  position: absolute;
-} */
+}
